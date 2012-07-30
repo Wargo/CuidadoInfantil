@@ -1,0 +1,882 @@
+================================================================================
+Appcelerator Titanium Diagnostics Build Log
+The contents of this file are useful to send to Appcelerator Support if
+reporting an issue to help us understand your environment, build settings
+and aid in debugging. Please attach this log to any issue that you report.
+================================================================================
+
+Starting build at 07/30/12 13:45
+
+Build details:
+
+   timestamp=04/12/12 16:33
+   module_apiversion=2
+   version=2.0.1
+   githash=999c68a
+
+
+Script arguments:
+   /Users/albertsorianogarcia/Library/Application Support/Titanium/mobilesdk/osx/2.0.1.GA2/iphone/builder.py
+   distribute
+   5.0
+   /Users/albertsorianogarcia/Documents/Titanium Studio Workspace/CuidadoInfantil
+   net.artvisual.cuidadoinfantil
+   CuidadoInfantil
+   A4C55DBE-8C81-45D0-B341-9546C04931BB
+   Artvisual Comunicacion Digital S.L.
+   
+   universal
+
+Building from: /Users/albertsorianogarcia/Library/Application Support/Titanium/mobilesdk/osx/2.0.1.GA2/iphone
+Platform: Darwin Kernel Version 11.3.0: Thu Jan 12 18:47:41 PST 2012; root:xnu-1699.24.23~1/RELEASE_X86_64
+
+Xcode path is: /Developer
+
+Reading provisioning profile:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ApplicationIdentifierPrefix</key>
+	<array>
+		<string>V5S656HK4G</string>
+	</array>
+	<key>CreationDate</key>
+	<date>2012-07-30T11:34:10Z</date>
+	<key>DeveloperCertificates</key>
+	<array>
+		<data>
+		MIIFvDCCBKSgAwIBAgIIagN2/hoeCcUwDQYJKoZIhvcNAQEFBQAwgZYxCzAJ
+		BgNVBAYTAlVTMRMwEQYDVQQKDApBcHBsZSBJbmMuMSwwKgYDVQQLDCNBcHBs
+		ZSBXb3JsZHdpZGUgRGV2ZWxvcGVyIFJlbGF0aW9uczFEMEIGA1UEAww7QXBw
+		bGUgV29ybGR3aWRlIERldmVsb3BlciBSZWxhdGlvbnMgQ2VydGlmaWNhdGlv
+		biBBdXRob3JpdHkwHhcNMTIwNTI4MTQ1OTEwWhcNMTMwNTI4MTQ1OTEwWjCB
+		rzEaMBgGCgmSJomT8ixkAQEMClY1UzY1NkhLNEcxQTA/BgNVBAMMOGlQaG9u
+		ZSBEaXN0cmlidXRpb246IEFydHZpc3VhbCBDb211bmljYWNpb24gRGlnaXRh
+		bCBTLkwuMRMwEQYDVQQLDApWNVM2NTZISzRHMSwwKgYDVQQKDCNBcnR2aXN1
+		YWwgQ29tdW5pY2FjaW9uIERpZ2l0YWwgUy5MLjELMAkGA1UEBhMCRVMwggEi
+		MA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQD5v843mJkweZGxOKXUdPtK
+		/AsTjzDxMgAMcVq51Rb5Tqop+DyAnTufz6OJKNQkWd9iDWM3uICX1G2kpL85
+		xUo6z5TJ6x9/EBwN9RYaIDBI2ttgxnY9I1d2pItxUuIavCgFU7hRvmioScad
+		lCyTlyjiI6IZP8eNNHkGMAKuEVQlpLV08zA3E1KzRWTvVBCQPCImW3qZJ88T
+		vidggvZNzbJPbJPbbX7cZMiMn/0z8RwtvUI9zGjiWU+O5GNpeUB2f3PJ1tg3
+		eT5ro3sS6icSlLsDdn28cEtQBDjWcPuAtwcNpd0SjoymiZfu2khC/3+BNSDR
+		ooodvaUr3T9G41TSTciDAgMBAAGjggHxMIIB7TAdBgNVHQ4EFgQUW3QnwR3L
+		pUwnm7H/p4fZy3nIKZQwDAYDVR0TAQH/BAIwADAfBgNVHSMEGDAWgBSIJxcJ
+		qbYYYIvs67r2R1nFUlSjtzCCAQ8GA1UdIASCAQYwggECMIH/BgkqhkiG92Nk
+		BQEwgfEwgcMGCCsGAQUFBwICMIG2DIGzUmVsaWFuY2Ugb24gdGhpcyBjZXJ0
+		aWZpY2F0ZSBieSBhbnkgcGFydHkgYXNzdW1lcyBhY2NlcHRhbmNlIG9mIHRo
+		ZSB0aGVuIGFwcGxpY2FibGUgc3RhbmRhcmQgdGVybXMgYW5kIGNvbmRpdGlv
+		bnMgb2YgdXNlLCBjZXJ0aWZpY2F0ZSBwb2xpY3kgYW5kIGNlcnRpZmljYXRp
+		b24gcHJhY3RpY2Ugc3RhdGVtZW50cy4wKQYIKwYBBQUHAgEWHWh0dHA6Ly93
+		d3cuYXBwbGUuY29tL2FwcGxlY2EvME0GA1UdHwRGMEQwQqBAoD6GPGh0dHA6
+		Ly9kZXZlbG9wZXIuYXBwbGUuY29tL2NlcnRpZmljYXRpb25hdXRob3JpdHkv
+		d3dkcmNhLmNybDAOBgNVHQ8BAf8EBAMCB4AwFgYDVR0lAQH/BAwwCgYIKwYB
+		BQUHAwMwEwYKKoZIhvdjZAYBBAEB/wQCBQAwDQYJKoZIhvcNAQEFBQADggEB
+		ACoRpQw56XgnX61f+LccYxRn6Pw13QZN4Ed/XhdWXJyPx5aXtPcbY1W/iICz
+		Y9BsXYwr+8/C5vyb4fExVJhozLRqtcwomMul22KTM4iT5vtA5+NVI9r79tfy
+		lVj5B4UT202tIeF3w14JAQBV6NQq4Lmr0YZDf2gflW8EGDfgKd/n1TeTdB4L
+		a664rUzkoJS/nerblwlDLKZUhUnimzMQt17N5khCVb0dF3RUP1xS9P6ei1Bl
+		MjArIn0OqezSFiZjhjQK4gYplnz3A0FYQLjAgdaH17hl9FDfq6xI0AQBjOWR
+		6OcqlOJ5ALPO7fYgvyb5PiJESy9IMKoT/QxMT9Lepfk=
+		</data>
+	</array>
+	<key>Entitlements</key>
+	<dict>
+		<key>application-identifier</key>
+		<string>V5S656HK4G.net.artvisual.cuidadoinfantil</string>
+		<key>get-task-allow</key>
+		<false/>
+		<key>keychain-access-groups</key>
+		<array>
+			<string>V5S656HK4G.*</string>
+		</array>
+	</dict>
+	<key>ExpirationDate</key>
+	<date>2013-05-28T11:34:10Z</date>
+	<key>Name</key>
+	<string>Cuidadoinfantil</string>
+	<key>TeamIdentifier</key>
+	<array>
+		<string>V5S656HK4G</string>
+	</array>
+	<key>TimeToLive</key>
+	<integer>302</integer>
+	<key>UUID</key>
+	<string>A4C55DBE-8C81-45D0-B341-9546C04931BB</string>
+	<key>Version</key>
+	<integer>1</integer>
+</dict>
+</plist>
+
+githash=999c68a, existing_git_hash=None
+forcing rebuild since libhash (None) not matching (6b039db50f01934ab31311c911af38db)
+Performing full rebuild
+Generated the following stylecode code:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>classes</key>
+		<dict>
+</dict>
+
+		<key>classes_density</key>
+		<dict>
+</dict>
+
+		<key>ids</key>
+		<dict>
+</dict>
+
+		<key>ids_density</key>
+		<dict>
+</dict>
+
+		<key>tags</key>
+		<dict>
+</dict>
+
+		<key>tags_density</key>
+		<dict>
+</dict>
+
+	</dict>
+</plist>
+Performing clean build...
+
+File listing for /Users/albertsorianogarcia/Documents/Titanium Studio Workspace/CuidadoInfantil
+
+  .gitignore                                                                                                               [4]     
+  .project                                                                                                                 [554]   
+  CHANGELOG.txt                                                                                                            [95]    
+  LICENSE                                                                                                                  [11491] 
+  LICENSE.txt                                                                                                              [92]    
+  manifest                                                                                                                 [195]   
+  README                                                                                                                   [551]   
+  tiapp.xml                                                                                                                [2572]  
+  .settings/com.appcelerator.titanium.core.prefs                                                                           [6637]  
+  .settings/com.aptana.editor.common.prefs                                                                                 [100]   
+  build/iphone/CuidadoInfantil_Prefix.pch                                                                                  [340]   
+  build/iphone/Info.plist                                                                                                  [1756]  
+  build/iphone/main.m                                                                                                      [1524]  
+  build/iphone/module.xcconfig                                                                                             [43]    
+  build/iphone/project.xcconfig                                                                                            [319]   
+  build/iphone/build/build.log                                                                                             [7040]  
+  build/iphone/build/Release-iphoneos/CuidadoInfantil.app/ti.cloud.js                                                      [20978] 
+  build/iphone/Classes/AccelerometerModule.h                                                                               [459]   
+  build/iphone/Classes/AccelerometerModule.m                                                                               [1265]  
+  build/iphone/Classes/AnalyticsModule.h                                                                                   [543]   
+  build/iphone/Classes/AnalyticsModule.mm                                                                                  [21906] 
+  build/iphone/Classes/APIModule.h                                                                                         [414]   
+  build/iphone/Classes/APIModule.m                                                                                         [3144]  
+  build/iphone/Classes/ApplicationDefaults.h                                                                               [455]   
+  build/iphone/Classes/ApplicationDefaults.m                                                                               [460]   
+  build/iphone/Classes/ApplicationMods.h                                                                                   [219]   
+  build/iphone/Classes/ApplicationMods.m                                                                                   [366]   
+  build/iphone/Classes/ApplicationRouting.h                                                                                [239]   
+  build/iphone/Classes/ApplicationRouting.m                                                                                [282]   
+  build/iphone/Classes/AppModule.h                                                                                         [1600]  
+  build/iphone/Classes/AppModule.m                                                                                         [9882]  
+  build/iphone/Classes/AQRecorder.h                                                                                        [4177]  
+  build/iphone/Classes/AQRecorder.mm                                                                                       [12397] 
+  build/iphone/Classes/AsyncSocket.h                                                                                       [31367] 
+  build/iphone/Classes/AsyncSocket.m                                                                                       [125641]
+  build/iphone/Classes/AsyncUdpSocket.h                                                                                    [14306] 
+  build/iphone/Classes/AsyncUdpSocket.m                                                                                    [66325] 
+  build/iphone/Classes/Base64Transcoder.c                                                                                  [9380]  
+  build/iphone/Classes/Base64Transcoder.h                                                                                  [1726]  
+  build/iphone/Classes/Bridge.h                                                                                            [701]   
+  build/iphone/Classes/Bridge.m                                                                                            [1442]  
+  build/iphone/Classes/CADebugMacros.cpp                                                                                   [3099]  
+  build/iphone/Classes/CADebugMacros.h                                                                                     [19530] 
+  build/iphone/Classes/CAMath.h                                                                                            [3186]  
+  build/iphone/Classes/CAStreamBasicDescription.cpp                                                                        [18953] 
+  build/iphone/Classes/CAStreamBasicDescription.h                                                                          [12015] 
+  build/iphone/Classes/CAXException.cpp                                                                                    [2551]  
+  build/iphone/Classes/CAXException.h                                                                                      [6733]  
+  build/iphone/Classes/CodecModule.h                                                                                       [1456]  
+  build/iphone/Classes/CodecModule.m                                                                                       [12937] 
+  build/iphone/Classes/ContactsModule.h                                                                                    [1388]  
+  build/iphone/Classes/ContactsModule.m                                                                                    [14943] 
+  build/iphone/Classes/DatabaseModule.h                                                                                    [551]   
+  build/iphone/Classes/DatabaseModule.m                                                                                    [1293]  
+  build/iphone/Classes/defines.h                                                                                           [190]   
+  build/iphone/Classes/FacebookModule.h                                                                                    [1102]  
+  build/iphone/Classes/FacebookModule.m                                                                                    [14305] 
+  build/iphone/Classes/FilesystemModule.h                                                                                  [933]   
+  build/iphone/Classes/FilesystemModule.m                                                                                  [4147]  
+  build/iphone/Classes/GDataXMLNode.h                                                                                      [7855]  
+  build/iphone/Classes/GDataXMLNode.m                                                                                      [51010] 
+  build/iphone/Classes/GeolocationModule.h                                                                                 [2858]  
+  build/iphone/Classes/GeolocationModule.mm                                                                                [22236] 
+  build/iphone/Classes/GestureModule.h                                                                                     [877]   
+  build/iphone/Classes/GestureModule.m                                                                                     [3694]  
+  build/iphone/Classes/ImageLoader.h                                                                                       [5472]  
+  build/iphone/Classes/ImageLoader.m                                                                                       [21428] 
+  build/iphone/Classes/KrollBridge.h                                                                                       [2420]  
+  build/iphone/Classes/KrollBridge.mm                                                                                      [25274] 
+  build/iphone/Classes/KrollCallback.h                                                                                     [2741]  
+  build/iphone/Classes/KrollCallback.m                                                                                     [6071]  
+  build/iphone/Classes/KrollContext.h                                                                                      [5317]  
+  build/iphone/Classes/KrollContext.mm                                                                                     [39191] 
+  build/iphone/Classes/KrollCoverage.h                                                                                     [2225]  
+  build/iphone/Classes/KrollCoverage.m                                                                                     [8708]  
+  build/iphone/Classes/KrollMethod.h                                                                                       [1513]  
+  build/iphone/Classes/KrollMethod.m                                                                                       [8318]  
+  build/iphone/Classes/KrollMethodDelegate.h                                                                               [771]   
+  build/iphone/Classes/KrollMethodDelegate.m                                                                               [753]   
+  build/iphone/Classes/KrollObject.h                                                                                       [3276]  
+  build/iphone/Classes/KrollObject.m                                                                                       [45407] 
+  build/iphone/Classes/KrollPropertyDelegate.h                                                                             [733]   
+  build/iphone/Classes/KrollPropertyDelegate.m                                                                             [692]   
+  build/iphone/Classes/KrollTimer.h                                                                                        [947]   
+  build/iphone/Classes/KrollTimer.m                                                                                        [3500]  
+  build/iphone/Classes/LauncherButton.h                                                                                    [1574]  
+  build/iphone/Classes/LauncherButton.m                                                                                    [6458]  
+  build/iphone/Classes/LauncherItem.h                                                                                      [1840]  
+  build/iphone/Classes/LauncherItem.m                                                                                      [2228]  
+  build/iphone/Classes/LauncherView.h                                                                                      [3047]  
+  build/iphone/Classes/LauncherView.m                                                                                      [23968] 
+  build/iphone/Classes/LayoutConstraint.h                                                                                  [2872]  
+  build/iphone/Classes/LayoutConstraint.m                                                                                  [14871] 
+  build/iphone/Classes/ListenerEntry.h                                                                                     [702]   
+  build/iphone/Classes/ListenerEntry.m                                                                                     [958]   
+  build/iphone/Classes/LocaleModule.h                                                                                      [401]   
+  build/iphone/Classes/LocaleModule.m                                                                                      [2158]  
+  build/iphone/Classes/MapModule.h                                                                                         [754]   
+  build/iphone/Classes/MapModule.m                                                                                         [766]   
+  build/iphone/Classes/MediaModule.h                                                                                       [9617]  
+  build/iphone/Classes/MediaModule.m                                                                                       [57484] 
+  build/iphone/Classes/Mimetypes.h                                                                                         [516]   
+  build/iphone/Classes/Mimetypes.m                                                                                         [2419]  
+  build/iphone/Classes/NetworkModule.h                                                                                     [2246]  
+  build/iphone/Classes/NetworkModule.m                                                                                     [10639] 
+  build/iphone/Classes/NSData+Additions.h                                                                                  [647]   
+  build/iphone/Classes/NSData+Additions.mm                                                                                 [7393]  
+  build/iphone/Classes/OperationQueue.h                                                                                    [1211]  
+  build/iphone/Classes/OperationQueue.m                                                                                    [2603]  
+  build/iphone/Classes/PlatformModule.h                                                                                    [1810]  
+  build/iphone/Classes/PlatformModule.m                                                                                    [9728]  
+  build/iphone/Classes/SBJSON.h                                                                                            [5440]  
+  build/iphone/Classes/SBJSON.m                                                                                            [30032] 
+  build/iphone/Classes/SCListener.h                                                                                        [653]   
+  build/iphone/Classes/SCListener.m                                                                                        [3969]  
+  build/iphone/Classes/StreamModule.h                                                                                      [1052]  
+  build/iphone/Classes/StreamModule.m                                                                                      [10525] 
+  build/iphone/Classes/Ti2DMatrix.h                                                                                        [1377]  
+  build/iphone/Classes/Ti2DMatrix.m                                                                                        [2874]  
+  build/iphone/Classes/TiAction.h                                                                                          [1162]  
+  build/iphone/Classes/TiAction.m                                                                                          [763]   
+  build/iphone/Classes/TiAnimation.h                                                                                       [4847]  
+  build/iphone/Classes/TiAnimation.m                                                                                       [17692] 
+  build/iphone/Classes/TiApp.h                                                                                             [4631]  
+  build/iphone/Classes/TiApp.mm                                                                                            [21639] 
+  build/iphone/Classes/TiAppiOSBackgroundServiceProxy.h                                                                    [542]   
+  build/iphone/Classes/TiAppiOSBackgroundServiceProxy.m                                                                    [1363]  
+  build/iphone/Classes/TiAppiOSLocalNotificationProxy.h                                                                    [571]   
+  build/iphone/Classes/TiAppiOSLocalNotificationProxy.m                                                                    [727]   
+  build/iphone/Classes/TiAppiOSProxy.h                                                                                     [514]   
+  build/iphone/Classes/TiAppiOSProxy.m                                                                                     [5730]  
+  build/iphone/Classes/TiAppPropertiesProxy.h                                                                              [830]   
+  build/iphone/Classes/TiAppPropertiesProxy.m                                                                              [3045]  
+  build/iphone/Classes/TiBase.h                                                                                            [18298] 
+  build/iphone/Classes/TiBase.m                                                                                            [10466] 
+  build/iphone/Classes/TiBlob.h                                                                                            [2918]  
+  build/iphone/Classes/TiBlob.m                                                                                            [8279]  
+  build/iphone/Classes/TiBuffer.h                                                                                          [1358]  
+  build/iphone/Classes/TiBuffer.m                                                                                          [13805] 
+  build/iphone/Classes/TiButtonUtil.h                                                                                      [449]   
+  build/iphone/Classes/TiButtonUtil.m                                                                                      [1371]  
+  build/iphone/Classes/TiColor.h                                                                                           [1259]  
+  build/iphone/Classes/TiColor.m                                                                                           [1556]  
+  build/iphone/Classes/TiComplexValue.h                                                                                    [1079]  
+  build/iphone/Classes/TiComplexValue.m                                                                                    [715]   
+  build/iphone/Classes/TiContactsGroup.h                                                                                   [766]   
+  build/iphone/Classes/TiContactsGroup.m                                                                                   [4957]  
+  build/iphone/Classes/TiContactsPerson.h                                                                                  [905]   
+  build/iphone/Classes/TiContactsPerson.m                                                                                  [12058] 
+  build/iphone/Classes/TiController.h                                                                                      [498]   
+  build/iphone/Classes/TiDatabaseProxy.h                                                                                   [889]   
+  build/iphone/Classes/TiDatabaseProxy.m                                                                                   [7682]  
+  build/iphone/Classes/TiDatabaseResultSetProxy.h                                                                          [809]   
+  build/iphone/Classes/TiDatabaseResultSetProxy.m                                                                          [6038]  
+  build/iphone/Classes/TiDataStream.h                                                                                      [680]   
+  build/iphone/Classes/TiDataStream.m                                                                                      [9573]  
+  build/iphone/Classes/TiDebugger.h                                                                                        [994]   
+  build/iphone/Classes/TiDimension.h                                                                                       [7773]  
+  build/iphone/Classes/TiDimension.m                                                                                       [1573]  
+  build/iphone/Classes/TiDOMAttrProxy.h                                                                                    [889]   
+  build/iphone/Classes/TiDOMAttrProxy.m                                                                                    [2215]  
+  build/iphone/Classes/TiDOMCDATANodeProxy.h                                                                               [472]   
+  build/iphone/Classes/TiDOMCDATANodeProxy.m                                                                               [456]   
+  build/iphone/Classes/TIDOMCharacterDataProxy.h                                                                           [758]   
+  build/iphone/Classes/TIDOMCharacterDataProxy.m                                                                           [3421]  
+  build/iphone/Classes/TiDOMCommentProxy.h                                                                                 [480]   
+  build/iphone/Classes/TiDOMCommentProxy.m                                                                                 [452]   
+  build/iphone/Classes/TiDOMDocFragProxy.h                                                                                 [519]   
+  build/iphone/Classes/TiDOMDocFragProxy.m                                                                                 [596]   
+  build/iphone/Classes/TiDOMDocumentProxy.h                                                                                [558]   
+  build/iphone/Classes/TiDOMDocumentProxy.m                                                                                [14821] 
+  build/iphone/Classes/TIDOMDocumentTypeProxy.h                                                                            [759]   
+  build/iphone/Classes/TIDOMDocumentTypeProxy.m                                                                            [1672]  
+  build/iphone/Classes/TIDOMDOMImplementationProxy.h                                                                       [480]   
+  build/iphone/Classes/TIDOMDOMImplementationProxy.m                                                                       [4413]  
+  build/iphone/Classes/TiDOMElementProxy.h                                                                                 [804]   
+  build/iphone/Classes/TiDOMElementProxy.m                                                                                 [21162] 
+  build/iphone/Classes/TiDOMEntityProxy.h                                                                                  [600]   
+  build/iphone/Classes/TiDOMEntityProxy.m                                                                                  [703]   
+  build/iphone/Classes/TiDOMEntityRefProxy.h                                                                               [463]   
+  build/iphone/Classes/TiDOMEntityRefProxy.m                                                                               [542]   
+  build/iphone/Classes/TiDOMNamedNodeMapProxy.h                                                                            [889]   
+  build/iphone/Classes/TiDOMNamedNodeMapProxy.m                                                                            [3395]  
+  build/iphone/Classes/TiDOMNodeListProxy.h                                                                                [629]   
+  build/iphone/Classes/TiDOMNodeListProxy.m                                                                                [1237]  
+  build/iphone/Classes/TiDOMNodeProxy.h                                                                                    [2743]  
+  build/iphone/Classes/TiDOMNodeProxy.m                                                                                    [17013] 
+  build/iphone/Classes/TiDOMNotationProxy.h                                                                                [556]   
+  build/iphone/Classes/TiDOMNotationProxy.m                                                                                [650]   
+  build/iphone/Classes/TiDOMPIProxy.h                                                                                      [629]   
+  build/iphone/Classes/TiDOMPIProxy.m                                                                                      [701]   
+  build/iphone/Classes/TiDOMTextNodeProxy.h                                                                                [559]   
+  build/iphone/Classes/TiDOMTextNodeProxy.m                                                                                [2400]  
+  build/iphone/Classes/TiDOMValidator.h                                                                                    [634]   
+  build/iphone/Classes/TiDOMValidator.m                                                                                    [1323]  
+  build/iphone/Classes/TiErrorController.h                                                                                 [441]   
+  build/iphone/Classes/TiErrorController.m                                                                                 [3331]  
+  build/iphone/Classes/TiEvaluator.h                                                                                       [1322]  
+  build/iphone/Classes/TiFacebookDialogRequest.h                                                                           [650]   
+  build/iphone/Classes/TiFacebookDialogRequest.m                                                                           [3319]  
+  build/iphone/Classes/TiFacebookLoginButton.h                                                                             [545]   
+  build/iphone/Classes/TiFacebookLoginButton.m                                                                             [3718]  
+  build/iphone/Classes/TiFacebookLoginButtonProxy.h                                                                        [758]   
+  build/iphone/Classes/TiFacebookLoginButtonProxy.m                                                                        [1153]  
+  build/iphone/Classes/TiFacebookRequest.h                                                                                 [715]   
+  build/iphone/Classes/TiFacebookRequest.m                                                                                 [2525]  
+  build/iphone/Classes/TiFile.h                                                                                            [1749]  
+  build/iphone/Classes/TiFile.m                                                                                            [2515]  
+  build/iphone/Classes/TiFilesystemBlobProxy.h                                                                             [534]   
+  build/iphone/Classes/TiFilesystemBlobProxy.m                                                                             [2529]  
+  build/iphone/Classes/TiFilesystemFileProxy.h                                                                             [1036]  
+  build/iphone/Classes/TiFilesystemFileProxy.m                                                                             [12603] 
+  build/iphone/Classes/TiFilesystemFileStreamProxy.h                                                                       [556]   
+  build/iphone/Classes/TiFilesystemFileStreamProxy.m                                                                       [11472] 
+  build/iphone/Classes/TiGradient.h                                                                                        [1617]  
+  build/iphone/Classes/TiGradient.m                                                                                        [6379]  
+  build/iphone/Classes/TiHost.h                                                                                            [1371]  
+  build/iphone/Classes/TiHost.m                                                                                            [4242]  
+  build/iphone/Classes/TiLayoutQueue.h                                                                                     [727]   
+  build/iphone/Classes/TiLayoutQueue.m                                                                                     [2763]  
+  build/iphone/Classes/TiLocale.h                                                                                          [1068]  
+  build/iphone/Classes/TiLocale.m                                                                                          [1523]  
+  build/iphone/Classes/TiMapAnnotationProxy.h                                                                              [1168]  
+  build/iphone/Classes/TiMapAnnotationProxy.m                                                                              [6121]  
+  build/iphone/Classes/TiMapImageAnnotationView.h                                                                          [704]   
+  build/iphone/Classes/TiMapImageAnnotationView.m                                                                          [2143]  
+  build/iphone/Classes/TiMapPinAnnotationView.h                                                                            [682]   
+  build/iphone/Classes/TiMapPinAnnotationView.m                                                                            [1979]  
+  build/iphone/Classes/TiMapView.h                                                                                         [1912]  
+  build/iphone/Classes/TiMapView.m                                                                                         [22059] 
+  build/iphone/Classes/TiMapViewProxy.h                                                                                    [1322]  
+  build/iphone/Classes/TiMapViewProxy.m                                                                                    [9628]  
+  build/iphone/Classes/TiMediaAudioPlayerProxy.h                                                                           [1654]  
+  build/iphone/Classes/TiMediaAudioPlayerProxy.m                                                                           [8141]  
+  build/iphone/Classes/TiMediaAudioRecorderProxy.h                                                                         [929]   
+  build/iphone/Classes/TiMediaAudioRecorderProxy.mm                                                                        [5498]  
+  build/iphone/Classes/TiMediaAudioSession.h                                                                               [1477]  
+  build/iphone/Classes/TiMediaAudioSession.m                                                                               [9697]  
+  build/iphone/Classes/TiMediaItem.h                                                                                       [1908]  
+  build/iphone/Classes/TiMediaItem.m                                                                                       [1472]  
+  build/iphone/Classes/TiMediaMusicPlayer.h                                                                                [1257]  
+  build/iphone/Classes/TiMediaMusicPlayer.m                                                                                [5951]  
+  build/iphone/Classes/TiMediaSoundProxy.h                                                                                 [1012]  
+  build/iphone/Classes/TiMediaSoundProxy.m                                                                                 [9361]  
+  build/iphone/Classes/TiMediaVideoPlayer.h                                                                                [736]   
+  build/iphone/Classes/TiMediaVideoPlayer.m                                                                                [3254]  
+  build/iphone/Classes/TiMediaVideoPlayerProxy.h                                                                           [1988]  
+  build/iphone/Classes/TiMediaVideoPlayerProxy.m                                                                           [24827] 
+  build/iphone/Classes/TiModule.h                                                                                          [1763]  
+  build/iphone/Classes/TiModule.m                                                                                          [6296]  
+  build/iphone/Classes/TiNetworkBonjourBrowserProxy.h                                                                      [973]   
+  build/iphone/Classes/TiNetworkBonjourBrowserProxy.m                                                                      [4984]  
+  build/iphone/Classes/TiNetworkBonjourServiceProxy.h                                                                      [1522]  
+  build/iphone/Classes/TiNetworkBonjourServiceProxy.m                                                                      [11999] 
+  build/iphone/Classes/TiNetworkHTTPClientProxy.h                                                                          [2620]  
+  build/iphone/Classes/TiNetworkHTTPClientProxy.m                                                                          [21119] 
+  build/iphone/Classes/TiNetworkHTTPClientResultProxy.h                                                                    [609]   
+  build/iphone/Classes/TiNetworkHTTPClientResultProxy.m                                                                    [4877]  
+  build/iphone/Classes/TiNetworkSocketProxy.h                                                                              [950]   
+  build/iphone/Classes/TiNetworkSocketProxy.m                                                                              [835]   
+  build/iphone/Classes/TiNetworkSocketTCPProxy.h                                                                           [3051]  
+  build/iphone/Classes/TiNetworkSocketTCPProxy.m                                                                           [32818] 
+  build/iphone/Classes/TiNetworkTCPSocketProxy.h                                                                           [1185]  
+  build/iphone/Classes/TiNetworkTCPSocketProxy.mm                                                                          [23936] 
+  build/iphone/Classes/TiPlatformDisplayCaps.h                                                                             [636]   
+  build/iphone/Classes/TiPlatformDisplayCaps.m                                                                             [1693]  
+  build/iphone/Classes/TiPoint.h                                                                                           [1176]  
+  build/iphone/Classes/TiPoint.m                                                                                           [1453]  
+  build/iphone/Classes/TiProxy.h                                                                                           [9041]  
+  build/iphone/Classes/TiProxy.m                                                                                           [29962] 
+  build/iphone/Classes/TiPublicAPI.h                                                                                       [2748]  
+  build/iphone/Classes/TiPublicAPI.m                                                                                       [350]   
+  build/iphone/Classes/TiRange.h                                                                                           [763]   
+  build/iphone/Classes/TiRange.m                                                                                           [806]   
+  build/iphone/Classes/TiRect.h                                                                                            [1003]  
+  build/iphone/Classes/TiRect.m                                                                                            [1387]  
+  build/iphone/Classes/TiRootController.h                                                                                  [2802]  
+  build/iphone/Classes/TiRootViewController.h                                                                              [5290]  
+  build/iphone/Classes/TiRootViewController.m                                                                              [40533] 
+  build/iphone/Classes/TiStreamProxy.h                                                                                     [1910]  
+  build/iphone/Classes/TiStreamProxy.m                                                                                     [5297]  
+  build/iphone/Classes/TiStylesheet.h                                                                                      [800]   
+  build/iphone/Classes/TiStylesheet.m                                                                                      [3996]  
+  build/iphone/Classes/TiTab.h                                                                                             [1003]  
+  build/iphone/Classes/TiTabController.h                                                                                   [476]   
+  build/iphone/Classes/TiTabGroup.h                                                                                        [500]   
+  build/iphone/Classes/TiThreading.h                                                                                       [2358]  
+  build/iphone/Classes/TiThreading.m                                                                                       [352]   
+  build/iphone/Classes/TiToolbar.h                                                                                         [554]   
+  build/iphone/Classes/TiToolbarButton.h                                                                                   [930]   
+  build/iphone/Classes/TiUIActivityIndicator.h                                                                             [701]   
+  build/iphone/Classes/TiUIActivityIndicator.m                                                                             [4598]  
+  build/iphone/Classes/TiUIActivityIndicatorProxy.h                                                                        [475]   
+  build/iphone/Classes/TiUIActivityIndicatorProxy.m                                                                        [853]   
+  build/iphone/Classes/TiUIAlertDialogProxy.h                                                                              [470]   
+  build/iphone/Classes/TiUIAlertDialogProxy.m                                                                              [4004]  
+  build/iphone/Classes/TiUIButton.h                                                                                        [614]   
+  build/iphone/Classes/TiUIButton.m                                                                                        [8674]  
+  build/iphone/Classes/TiUIButtonBar.h                                                                                     [599]   
+  build/iphone/Classes/TiUIButtonBar.m                                                                                     [6135]  
+  build/iphone/Classes/TiUIButtonBarProxy.h                                                                                [402]   
+  build/iphone/Classes/TiUIButtonBarProxy.m                                                                                [978]   
+  build/iphone/Classes/TiUIButtonProxy.h                                                                                   [620]   
+  build/iphone/Classes/TiUIButtonProxy.m                                                                                   [3502]  
+  build/iphone/Classes/TiUICanvasView.h                                                                                    [527]   
+  build/iphone/Classes/TiUICanvasView.m                                                                                    [10088] 
+  build/iphone/Classes/TiUICanvasViewProxy.h                                                                               [435]   
+  build/iphone/Classes/TiUICanvasViewProxy.m                                                                               [659]   
+  build/iphone/Classes/TiUIClipboardProxy.h                                                                                [672]   
+  build/iphone/Classes/TiUIClipboardProxy.m                                                                                [5479]  
+  build/iphone/Classes/TiUIDashboardItem.h                                                                                 [444]   
+  build/iphone/Classes/TiUIDashboardItem.m                                                                                 [866]   
+  build/iphone/Classes/TiUIDashboardItemProxy.h                                                                            [558]   
+  build/iphone/Classes/TiUIDashboardItemProxy.m                                                                            [2165]  
+  build/iphone/Classes/TiUIDashboardView.h                                                                                 [578]   
+  build/iphone/Classes/TiUIDashboardView.m                                                                                 [5562]  
+  build/iphone/Classes/TiUIDashboardViewProxy.h                                                                            [444]   
+  build/iphone/Classes/TiUIDashboardViewProxy.m                                                                            [1739]  
+  build/iphone/Classes/TiUIEmailDialogProxy.h                                                                              [836]   
+  build/iphone/Classes/TiUIEmailDialogProxy.m                                                                              [4657]  
+  build/iphone/Classes/TiUIImageView.h                                                                                     [1183]  
+  build/iphone/Classes/TiUIImageView.m                                                                                     [20300] 
+  build/iphone/Classes/TiUIImageViewProxy.h                                                                                [701]   
+  build/iphone/Classes/TiUIImageViewProxy.m                                                                                [5458]  
+  build/iphone/Classes/TiUIiOS3DMatrix.h                                                                                   [1686]  
+  build/iphone/Classes/TiUIiOS3DMatrix.m                                                                                   [3239]  
+  build/iphone/Classes/TiUIiOSAdView.h                                                                                     [555]   
+  build/iphone/Classes/TiUIiOSAdView.m                                                                                     [3678]  
+  build/iphone/Classes/TiUIiOSAdViewProxy.h                                                                                [629]   
+  build/iphone/Classes/TiUIiOSAdViewProxy.m                                                                                [1822]  
+  build/iphone/Classes/TiUIiOSCoverFlowView.h                                                                              [804]   
+  build/iphone/Classes/TiUIiOSCoverFlowView.m                                                                              [7913]  
+  build/iphone/Classes/TiUIiOSCoverFlowViewProxy.h                                                                         [494]   
+  build/iphone/Classes/TiUIiOSCoverFlowViewProxy.m                                                                         [1036]  
+  build/iphone/Classes/TiUIiOSProxy.h                                                                                      [942]   
+  build/iphone/Classes/TiUIiOSProxy.m                                                                                      [4424]  
+  build/iphone/Classes/TiUIiOSTabbedBarProxy.h                                                                             [476]   
+  build/iphone/Classes/TiUIiOSTabbedBarProxy.m                                                                             [881]   
+  build/iphone/Classes/TiUIiOSToolbar.h                                                                                    [572]   
+  build/iphone/Classes/TiUIiOSToolbar.m                                                                                    [4557]  
+  build/iphone/Classes/TiUIiOSToolbarProxy.h                                                                               [507]   
+  build/iphone/Classes/TiUIiOSToolbarProxy.m                                                                               [2097]  
+  build/iphone/Classes/TiUIiPadDocumentViewerProxy.h                                                                       [670]   
+  build/iphone/Classes/TiUIiPadDocumentViewerProxy.m                                                                       [3879]  
+  build/iphone/Classes/TiUIiPadPopover.h                                                                                   [539]   
+  build/iphone/Classes/TiUIiPadPopover.m                                                                                   [488]   
+  build/iphone/Classes/TiUIiPadPopoverProxy.h                                                                              [1583]  
+  build/iphone/Classes/TiUIiPadPopoverProxy.m                                                                              [10849] 
+  build/iphone/Classes/TiUIiPadProxy.h                                                                                     [1472]  
+  build/iphone/Classes/TiUIiPadProxy.m                                                                                     [1911]  
+  build/iphone/Classes/TiUIiPadSplitWindow.h                                                                               [889]   
+  build/iphone/Classes/TiUIiPadSplitWindow.m                                                                               [5833]  
+  build/iphone/Classes/TiUIiPadSplitWindowButtonProxy.h                                                                    [598]   
+  build/iphone/Classes/TiUIiPadSplitWindowButtonProxy.m                                                                    [974]   
+  build/iphone/Classes/TiUIiPadSplitWindowProxy.h                                                                          [533]   
+  build/iphone/Classes/TiUIiPadSplitWindowProxy.m                                                                          [2589]  
+  build/iphone/Classes/TiUIiPhoneActivityIndicatorStyleProxy.h                                                             [606]   
+  build/iphone/Classes/TiUIiPhoneActivityIndicatorStyleProxy.m                                                             [667]   
+  build/iphone/Classes/TiUIiPhoneAnimationStyleProxy.h                                                                     [713]   
+  build/iphone/Classes/TiUIiPhoneAnimationStyleProxy.m                                                                     [817]   
+  build/iphone/Classes/TiUIiPhoneNavigationGroup.h                                                                         [838]   
+  build/iphone/Classes/TiUIiPhoneNavigationGroup.m                                                                         [5433]  
+  build/iphone/Classes/TiUIiPhoneNavigationGroupProxy.h                                                                    [830]   
+  build/iphone/Classes/TiUIiPhoneNavigationGroupProxy.m                                                                    [4292]  
+  build/iphone/Classes/TiUIiPhoneProgressBarStyleProxy.h                                                                   [597]   
+  build/iphone/Classes/TiUIiPhoneProgressBarStyleProxy.m                                                                   [623]   
+  build/iphone/Classes/TiUIiPhoneProxy.h                                                                                   [3815]  
+  build/iphone/Classes/TiUIiPhoneProxy.m                                                                                   [10690] 
+  build/iphone/Classes/TiUIiPhoneRowAnimationStyleProxy.h                                                                  [881]   
+  build/iphone/Classes/TiUIiPhoneRowAnimationStyleProxy.m                                                                  [919]   
+  build/iphone/Classes/TiUIiPhoneScrollIndicatorStyleProxy.h                                                               [617]   
+  build/iphone/Classes/TiUIiPhoneScrollIndicatorStyleProxy.m                                                               [678]   
+  build/iphone/Classes/TiUIiPhoneStatusBarProxy.h                                                                          [885]   
+  build/iphone/Classes/TiUIiPhoneStatusBarProxy.m                                                                          [927]   
+  build/iphone/Classes/TiUIiPhoneSystemButtonProxy.h                                                                       [1794]  
+  build/iphone/Classes/TiUIiPhoneSystemButtonProxy.m                                                                       [2005]  
+  build/iphone/Classes/TiUIiPhoneSystemButtonStyleProxy.h                                                                  [667]   
+  build/iphone/Classes/TiUIiPhoneSystemButtonStyleProxy.m                                                                  [682]   
+  build/iphone/Classes/TiUIiPhoneSystemIconProxy.h                                                                         [1046]  
+  build/iphone/Classes/TiUIiPhoneSystemIconProxy.m                                                                         [1115]  
+  build/iphone/Classes/TiUIiPhoneTableViewCellSelectionStyleProxy.h                                                        [626]   
+  build/iphone/Classes/TiUIiPhoneTableViewCellSelectionStyleProxy.m                                                        [698]   
+  build/iphone/Classes/TiUIiPhoneTableViewScrollPositionProxy.h                                                            [667]   
+  build/iphone/Classes/TiUIiPhoneTableViewScrollPositionProxy.m                                                            [715]   
+  build/iphone/Classes/TiUIiPhoneTableViewSeparatorStyleProxy.h                                                            [569]   
+  build/iphone/Classes/TiUIiPhoneTableViewSeparatorStyleProxy.m                                                            [621]   
+  build/iphone/Classes/TiUIiPhoneTableViewStyleProxy.h                                                                     [547]   
+  build/iphone/Classes/TiUIiPhoneTableViewStyleProxy.m                                                                     [562]   
+  build/iphone/Classes/TiUILabel.h                                                                                         [672]   
+  build/iphone/Classes/TiUILabel.m                                                                                         [6919]  
+  build/iphone/Classes/TiUILabelProxy.h                                                                                    [429]   
+  build/iphone/Classes/TiUILabelProxy.m                                                                                    [1691]  
+  build/iphone/Classes/TiUIMaskedImage.h                                                                                   [546]   
+  build/iphone/Classes/TiUIMaskedImage.m                                                                                   [2768]  
+  build/iphone/Classes/TiUIMaskedImageProxy.h                                                                              [451]   
+  build/iphone/Classes/TiUIMaskedImageProxy.m                                                                              [668]   
+  build/iphone/Classes/TiUINavBarButton.h                                                                                  [616]   
+  build/iphone/Classes/TiUINavBarButton.m                                                                                  [5935]  
+  build/iphone/Classes/TiUIOptionDialogProxy.h                                                                             [864]   
+  build/iphone/Classes/TiUIOptionDialogProxy.m                                                                             [6149]  
+  build/iphone/Classes/TiUIPicker.h                                                                                        [910]   
+  build/iphone/Classes/TiUIPicker.m                                                                                        [11479] 
+  build/iphone/Classes/TiUIPickerColumnProxy.h                                                                             [719]   
+  build/iphone/Classes/TiUIPickerColumnProxy.m                                                                             [1174]  
+  build/iphone/Classes/TiUIPickerProxy.h                                                                                   [529]   
+  build/iphone/Classes/TiUIPickerProxy.m                                                                                   [8817]  
+  build/iphone/Classes/TiUIPickerRowProxy.h                                                                                [434]   
+  build/iphone/Classes/TiUIPickerRowProxy.m                                                                                [429]   
+  build/iphone/Classes/TiUIProgressBar.h                                                                                   [634]   
+  build/iphone/Classes/TiUIProgressBar.m                                                                                   [3655]  
+  build/iphone/Classes/TiUIProgressBarProxy.h                                                                              [440]   
+  build/iphone/Classes/TiUIProgressBarProxy.m                                                                              [942]   
+  build/iphone/Classes/TiUIScrollableView.h                                                                                [1182]  
+  build/iphone/Classes/TiUIScrollableView.m                                                                                [14672] 
+  build/iphone/Classes/TiUIScrollableViewProxy.h                                                                           [684]   
+  build/iphone/Classes/TiUIScrollableViewProxy.m                                                                           [5685]  
+  build/iphone/Classes/TiUIScrollView.h                                                                                    [1156]  
+  build/iphone/Classes/TiUIScrollView.m                                                                                    [9569]  
+  build/iphone/Classes/TiUIScrollViewProxy.h                                                                               [550]   
+  build/iphone/Classes/TiUIScrollViewProxy.m                                                                               [10134] 
+  build/iphone/Classes/TiUISearchBar.h                                                                                     [721]   
+  build/iphone/Classes/TiUISearchBar.m                                                                                     [6371]  
+  build/iphone/Classes/TiUISearchBarProxy.h                                                                                [826]   
+  build/iphone/Classes/TiUISearchBarProxy.m                                                                                [2003]  
+  build/iphone/Classes/TiUISlider.h                                                                                        [675]   
+  build/iphone/Classes/TiUISlider.m                                                                                        [8204]  
+  build/iphone/Classes/TiUISliderProxy.h                                                                                   [431]   
+  build/iphone/Classes/TiUISliderProxy.m                                                                                   [892]   
+  build/iphone/Classes/TiUISwitch.h                                                                                        [478]   
+  build/iphone/Classes/TiUISwitch.m                                                                                        [3101]  
+  build/iphone/Classes/TiUISwitchProxy.h                                                                                   [399]   
+  build/iphone/Classes/TiUISwitchProxy.m                                                                                   [831]   
+  build/iphone/Classes/TiUITabController.h                                                                                 [743]   
+  build/iphone/Classes/TiUITabController.m                                                                                 [1155]  
+  build/iphone/Classes/TiUITabGroup.h                                                                                      [975]   
+  build/iphone/Classes/TiUITabGroup.m                                                                                      [12444] 
+  build/iphone/Classes/TiUITabGroupProxy.h                                                                                 [592]   
+  build/iphone/Classes/TiUITabGroupProxy.m                                                                                 [5693]  
+  build/iphone/Classes/TiUITableView.h                                                                                     [3102]  
+  build/iphone/Classes/TiUITableView.m                                                                                     [70146] 
+  build/iphone/Classes/TiUITableViewAction.h                                                                               [1316]  
+  build/iphone/Classes/TiUITableViewAction.m                                                                               [1276]  
+  build/iphone/Classes/TiUITableViewProxy.h                                                                                [1058]  
+  build/iphone/Classes/TiUITableViewProxy.m                                                                                [21025] 
+  build/iphone/Classes/TiUITableViewRowProxy.h                                                                             [1884]  
+  build/iphone/Classes/TiUITableViewRowProxy.m                                                                             [24466] 
+  build/iphone/Classes/TiUITableViewSectionProxy.h                                                                         [1124]  
+  build/iphone/Classes/TiUITableViewSectionProxy.m                                                                         [3374]  
+  build/iphone/Classes/TiUITabProxy.h                                                                                      [1920]  
+  build/iphone/Classes/TiUITabProxy.m                                                                                      [16475] 
+  build/iphone/Classes/TiUITextArea.h                                                                                      [485]   
+  build/iphone/Classes/TiUITextArea.m                                                                                      [5333]  
+  build/iphone/Classes/TiUITextAreaProxy.h                                                                                 [452]   
+  build/iphone/Classes/TiUITextAreaProxy.m                                                                                 [452]   
+  build/iphone/Classes/TiUITextField.h                                                                                     [1221]  
+  build/iphone/Classes/TiUITextField.m                                                                                     [12137] 
+  build/iphone/Classes/TiUITextFieldProxy.h                                                                                [455]   
+  build/iphone/Classes/TiUITextFieldProxy.m                                                                                [1697]  
+  build/iphone/Classes/TiUITextWidget.h                                                                                    [992]   
+  build/iphone/Classes/TiUITextWidget.m                                                                                    [4475]  
+  build/iphone/Classes/TiUITextWidgetProxy.h                                                                               [1032]  
+  build/iphone/Classes/TiUITextWidgetProxy.m                                                                               [7156]  
+  build/iphone/Classes/TiUIView.h                                                                                          [6907]  
+  build/iphone/Classes/TiUIView.m                                                                                          [36496] 
+  build/iphone/Classes/TiUIViewProxy.h                                                                                     [399]   
+  build/iphone/Classes/TiUIViewProxy.m                                                                                     [388]   
+  build/iphone/Classes/TiUIWebView.h                                                                                       [1315]  
+  build/iphone/Classes/TiUIWebView.m                                                                                       [24028] 
+  build/iphone/Classes/TiUIWebViewProxy.h                                                                                  [591]   
+  build/iphone/Classes/TiUIWebViewProxy.m                                                                                  [5866]  
+  build/iphone/Classes/TiUIWindow.h                                                                                        [419]   
+  build/iphone/Classes/TiUIWindow.m                                                                                        [801]   
+  build/iphone/Classes/TiUIWindowProxy.h                                                                                   [807]   
+  build/iphone/Classes/TiUIWindowProxy.m                                                                                   [23203] 
+  build/iphone/Classes/TiUtils.h                                                                                           [17978] 
+  build/iphone/Classes/TiUtils.m                                                                                           [45313] 
+  build/iphone/Classes/TiViewController.h                                                                                  [2503]  
+  build/iphone/Classes/TiViewController.m                                                                                  [3717]  
+  build/iphone/Classes/TiViewProxy.h                                                                                       [14392] 
+  build/iphone/Classes/TiViewProxy.m                                                                                       [75480] 
+  build/iphone/Classes/TiWindowProxy.h                                                                                     [5400]  
+  build/iphone/Classes/TiWindowProxy.m                                                                                     [21197] 
+  build/iphone/Classes/TopTiModule.h                                                                                       [391]   
+  build/iphone/Classes/TopTiModule.m                                                                                       [6350]  
+  build/iphone/Classes/UIImage+Alpha.h                                                                                     [593]   
+  build/iphone/Classes/UIImage+Alpha.m                                                                                     [5886]  
+  build/iphone/Classes/UIImage+Resize.h                                                                                    [1075]  
+  build/iphone/Classes/UIImage+Resize.m                                                                                    [8755]  
+  build/iphone/Classes/UIImage+RoundedCorner.h                                                                             [500]   
+  build/iphone/Classes/UIImage+RoundedCorner.m                                                                             [3367]  
+  build/iphone/Classes/UIModule.h                                                                                          [7262]  
+  build/iphone/Classes/UIModule.m                                                                                          [17846] 
+  build/iphone/Classes/UtilsModule.h                                                                                       [429]   
+  build/iphone/Classes/UtilsModule.m                                                                                       [3445]  
+  build/iphone/Classes/Webcolor.h                                                                                          [1174]  
+  build/iphone/Classes/Webcolor.m                                                                                          [6549]  
+  build/iphone/Classes/WebFont.h                                                                                           [2319]  
+  build/iphone/Classes/WebFont.m                                                                                           [11126] 
+  build/iphone/Classes/XHRBridge.h                                                                                         [559]   
+  build/iphone/Classes/XHRBridge.m                                                                                         [5866]  
+  build/iphone/Classes/XMLModule.h                                                                                         [415]   
+  build/iphone/Classes/XMLModule.m                                                                                         [840]   
+  build/iphone/Classes/YahooModule.h                                                                                       [632]   
+  build/iphone/Classes/YahooModule.m                                                                                       [5977]  
+  build/iphone/Classes/AFOpenFlow/AFItemView.h                                                                             [1844]  
+  build/iphone/Classes/AFOpenFlow/AFItemView.m                                                                             [2977]  
+  build/iphone/Classes/AFOpenFlow/AFOpenFlowConstants.h                                                                    [1368]  
+  build/iphone/Classes/AFOpenFlow/AFOpenFlowView.h                                                                         [2919]  
+  build/iphone/Classes/AFOpenFlow/AFOpenFlowView.m                                                                         [17078] 
+  build/iphone/Classes/AFOpenFlow/AFUIImageReflection.h                                                                    [1575]  
+  build/iphone/Classes/AFOpenFlow/AFUIImageReflection.m                                                                    [4518]  
+  build/iphone/Classes/AFOpenFlow/UIImageExtras.h                                                                          [1542]  
+  build/iphone/Classes/AFOpenFlow/UIImageExtras.m                                                                          [3115]  
+  build/iphone/Classes/ASI/ASIAuthenticationDialog.h                                                                       [1107]  
+  build/iphone/Classes/ASI/ASIAuthenticationDialog.m                                                                       [15856] 
+  build/iphone/Classes/ASI/ASICacheDelegate.h                                                                              [5151]  
+  build/iphone/Classes/ASI/ASIDataCompressor.h                                                                             [1836]  
+  build/iphone/Classes/ASI/ASIDataCompressor.m                                                                             [6730]  
+  build/iphone/Classes/ASI/ASIDataDecompressor.h                                                                           [1699]  
+  build/iphone/Classes/ASI/ASIDataDecompressor.m                                                                           [6406]  
+  build/iphone/Classes/ASI/ASIDownloadCache.h                                                                              [1741]  
+  build/iphone/Classes/ASI/ASIDownloadCache.m                                                                              [17172] 
+  build/iphone/Classes/ASI/ASIFormDataRequest.h                                                                            [2693]  
+  build/iphone/Classes/ASI/ASIFormDataRequest.m                                                                            [11229] 
+  build/iphone/Classes/ASI/ASIHTTPRequest.h                                                                                [44994] 
+  build/iphone/Classes/ASI/ASIHTTPRequest.m                                                                                [184461]
+  build/iphone/Classes/ASI/ASIHTTPRequestConfig.h                                                                          [1144]  
+  build/iphone/Classes/ASI/ASIHTTPRequestDelegate.h                                                                        [1598]  
+  build/iphone/Classes/ASI/ASIInputStream.h                                                                                [969]   
+  build/iphone/Classes/ASI/ASIInputStream.m                                                                                [3092]  
+  build/iphone/Classes/ASI/ASINetworkQueue.h                                                                               [4621]  
+  build/iphone/Classes/ASI/ASINetworkQueue.m                                                                               [11405] 
+  build/iphone/Classes/ASI/ASIProgressDelegate.h                                                                           [1656]  
+  build/iphone/Classes/ASI/Reachability.h                                                                                  [7424]  
+  build/iphone/Classes/ASI/Reachability.m                                                                                  [24137] 
+  build/iphone/Classes/AudioStreamer/AudioStreamer.h                                                                       [4493]  
+  build/iphone/Classes/AudioStreamer/AudioStreamer.m                                                                       [6253]  
+  build/iphone/Classes/AudioStreamer/AudioStreamerBC.h                                                                     [2625]  
+  build/iphone/Classes/AudioStreamer/AudioStreamerBC.m                                                                     [36876] 
+  build/iphone/Classes/AudioStreamer/AudioStreamerCUR.h                                                                    [3844]  
+  build/iphone/Classes/AudioStreamer/AudioStreamerCUR.m                                                                    [43643] 
+  build/iphone/Classes/FBConnect/Facebook.h                                                                                [3923]  
+  build/iphone/Classes/FBConnect/Facebook.m                                                                                [23825] 
+  build/iphone/Classes/FBConnect/FBConnect.h                                                                               [737]   
+  build/iphone/Classes/FBConnect/FBDialog.h                                                                                [4629]  
+  build/iphone/Classes/FBConnect/FBDialog.m                                                                                [22339] 
+  build/iphone/Classes/FBConnect/FBLoginButton.h                                                                           [1155]  
+  build/iphone/Classes/FBConnect/FBLoginButton.m                                                                           [2378]  
+  build/iphone/Classes/FBConnect/FBLoginDialog.h                                                                           [1432]  
+  build/iphone/Classes/FBConnect/FBLoginDialog.m                                                                           [3825]  
+  build/iphone/Classes/FBConnect/FBRequest.h                                                                               [3408]  
+  build/iphone/Classes/FBConnect/FBRequest.m                                                                               [11453] 
+  build/iphone/Classes/JSON/JSON.h                                                                                         [2296]  
+  build/iphone/Classes/JSON/MASS-TODO                                                                                      [521]   
+  build/iphone/Classes/JSON/NSObject+SBJSON.h                                                                              [2653]  
+  build/iphone/Classes/JSON/NSObject+SBJSON.m                                                                              [2242]  
+  build/iphone/Classes/JSON/NSString+SBJSON.h                                                                              [2354]  
+  build/iphone/Classes/JSON/NSString+SBJSON.m                                                                              [2209]  
+  build/iphone/Classes/JSON/SBJSON.h                                                                                       [2837]  
+  build/iphone/Classes/JSON/SBJSON.m                                                                                       [6878]  
+  build/iphone/Classes/JSON/SBJsonBase.h                                                                                   [2978]  
+  build/iphone/Classes/JSON/SBJsonBase.m                                                                                   [2787]  
+  build/iphone/Classes/JSON/SBJsonParser.h                                                                                 [3121]  
+  build/iphone/Classes/JSON/SBJsonParser.m                                                                                 [14064] 
+  build/iphone/Classes/JSON/SBJsonWriter.h                                                                                 [4456]  
+  build/iphone/Classes/JSON/SBJsonWriter.m                                                                                 [8006]  
+  build/iphone/Classes/MGSplitView/MGSplitCornersView.h                                                                    [1228]  
+  build/iphone/Classes/MGSplitView/MGSplitCornersView.m                                                                    [6127]  
+  build/iphone/Classes/MGSplitView/MGSplitDividerView.h                                                                    [619]   
+  build/iphone/Classes/MGSplitView/MGSplitDividerView.m                                                                    [5359]  
+  build/iphone/Classes/MGSplitView/MGSplitView.h                                                                           [709]   
+  build/iphone/Classes/MGSplitView/MGSplitView.m                                                                           [1309]  
+  build/iphone/Classes/MGSplitView/MGSplitViewController.h                                                                 [7795]  
+  build/iphone/Classes/MGSplitView/MGSplitViewController.m                                                                 [34368] 
+  build/iphone/Classes/PlausibleDatabase/PlausibleDatabase.h                                                               [8516]  
+  build/iphone/Classes/PlausibleDatabase/PlausibleDatabase.m                                                               [4105]  
+  build/iphone/Classes/PlausibleDatabase/PLDatabase.h                                                                      [8453]  
+  build/iphone/Classes/PlausibleDatabase/PLPreparedStatement.h                                                             [5314]  
+  build/iphone/Classes/PlausibleDatabase/PLResultSet.h                                                                     [7985]  
+  build/iphone/Classes/PlausibleDatabase/PLSqliteDatabase.h                                                                [2431]  
+  build/iphone/Classes/PlausibleDatabase/PLSqliteDatabase.m                                                                [15411] 
+  build/iphone/Classes/PlausibleDatabase/PLSqlitePreparedStatement.h                                                       [2533]  
+  build/iphone/Classes/PlausibleDatabase/PLSqlitePreparedStatement.m                                                       [15247] 
+  build/iphone/Classes/PlausibleDatabase/PLSqliteResultSet.h                                                               [2264]  
+  build/iphone/Classes/PlausibleDatabase/PLSqliteResultSet.m                                                               [11134] 
+  build/iphone/CuidadoInfantil.xcodeproj/project.pbxproj                                                                   [392812]
+  build/iphone/headers/TiCore/Ti.h                                                                                         [1825]  
+  build/iphone/headers/TiCore/TiBase.h                                                                                     [6625]  
+  build/iphone/headers/TiCore/TiContextRef.h                                                                               [5341]  
+  build/iphone/headers/TiCore/TiContextRefPrivate.h                                                                        [2448]  
+  build/iphone/headers/TiCore/TiCore.h                                                                                     [1696]  
+  build/iphone/headers/TiCore/TiObjectRef.h                                                                                [37986] 
+  build/iphone/headers/TiCore/TiStringRef.h                                                                                [5863]  
+  build/iphone/headers/TiCore/TiStringRefCF.h                                                                              [2624]  
+  build/iphone/headers/TiCore/TiValueRef.h                                                                                 [12859] 
+  build/iphone/headers/TiCore/WebKitAvailability.h                                                                         [32977] 
+  build/iphone/lib/libti_ios_debugger.a                                                                                    [4325396]
+  build/iphone/lib/libTiCore.a                                                                                             [247725516]
+  build/iphone/lib/libtiverify.a                                                                                           [379380]
+  build/iphone/Resources/.version                                                                                          [172]   
+  build/iphone/Resources/appicon.png                                                                                       [4275]  
+  build/iphone/Resources/debugger.plist                                                                                    [260]   
+  build/iphone/Resources/Default-Landscape.png                                                                             [517419]
+  build/iphone/Resources/Default-Portrait.png                                                                              [551670]
+  build/iphone/Resources/Default.png                                                                                       [114262]
+  build/iphone/Resources/Default@2x.png                                                                                    [380255]
+  build/iphone/Resources/Entitlements.plist                                                                                [447]   
+  build/iphone/Resources/stylesheet.plist                                                                                  [132]   
+  Resources/app.js                                                                                                         [918]   
+  Resources/image.js                                                                                                       [205]   
+  Resources/row.js                                                                                                         [2600]  
+  Resources/images/blog.png                                                                                                [672]   
+  Resources/images/logo.png                                                                                                [7672]  
+  Resources/images/logoSmall.png                                                                                           [534]   
+  Resources/images/tools.png                                                                                               [582]   
+  Resources/images/topBar.png                                                                                              [1010]  
+  Resources/iphone/appicon.png                                                                                             [4275]  
+  Resources/iphone/Default-Landscape.png                                                                                   [517419]
+  Resources/iphone/Default-Portrait.png                                                                                    [551670]
+  Resources/iphone/Default.png                                                                                             [114262]
+  Resources/iphone/Default@2x.png                                                                                          [380255]
+----------------------------------------------------------------------------------------------------------------------------------
+Total files: 247.0 MB
+
+Contents of Info.plist
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleDisplayName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundleExecutable</key>
+	<string>${EXECUTABLE_NAME}</string>
+	<key>CFBundleIconFile</key>
+	<string>appicon.png</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>net.artvisual.cuidadoinfantil</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>cuidadoinfantil</string>
+				
+			</array>
+		</dict>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string>net.artvisual.cuidadoinfantil</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>${PRODUCT_NAME}</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+        <key>CFBundleIconFiles</key>
+        <array>
+	<string>appicon.png</string>
+</array>
+
+        <key>UISupportedInterfaceOrientations~ipad</key>
+        <array>
+	<string>UIInterfaceOrientationPortrait</string>
+	<string>UIInterfaceOrientationPortraitUpsideDown</string>
+	<string>UIInterfaceOrientationLandscapeLeft</string>
+	<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+        <key>UISupportedInterfaceOrientations</key>
+        <array>
+	<string>UIInterfaceOrientationPortrait</string>
+	</array>
+        <key>UIStatusBarStyle</key>
+        <string>UIStatusBarStyleDefault</string>
+</dict>
+</plist>
+
+==================================================================================================================================
+
+Using app_prefix = V5S656HK4G
+
+Generated the following entitlements:
+
+<?xml version="1.0" encoding="UTF-8"?> 	
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+
+		<key>application-identifier</key>
+		<string>V5S656HK4G.net.artvisual.cuidadoinfantil</string>
+		<key>get-task-allow</key>
+		<false/>
+		<key>keychain-access-groups</key>
+		<array>
+			<string>V5S656HK4G.net.artvisual.cuidadoinfantil</string>
+		</array>
+		
+	</dict>
+</plist>
+
+Starting Xcode compile with the following arguments:
+
+    xcodebuild
+    -target
+    CuidadoInfantil-universal
+    -configuration
+    Release
+    -sdk
+    iphoneos5.0
+    CODE_SIGN_ENTITLEMENTS=Resources/Entitlements.plist
+    GCC_PREPROCESSOR_DEFINITIONS=DEPLOYTYPE=production TI_PRODUCTION=1
+    PROVISIONING_PROFILE=A4C55DBE-8C81-45D0-B341-9546C04931BB
+    CODE_SIGN_IDENTITY=iPhone Distribution: Artvisual Comunicacion Digital S.L.
+    DEPLOYMENT_POSTPROCESSING=YES
+    IPHONEOS_DEPLOYMENT_TARGET=4.0
+    TARGETED_DEVICE_FAMILY=1,2
+    VALID_ARCHS=armv6 armv7 i386
+
+app_id = net.artvisual.cuidadoinfantil
+
+
