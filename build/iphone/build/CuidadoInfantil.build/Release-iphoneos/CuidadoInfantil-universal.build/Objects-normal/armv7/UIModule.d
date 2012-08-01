@@ -25,6 +25,10 @@ dependencies: \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiBlob.h \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiUIAlertDialogProxy.h \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/Ti2DMatrix.h \
+  /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiAnimation.h \
+  /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiPoint.h \
+  /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/ListenerEntry.h \
+  /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/LayoutConstraint.h \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiUIiPhoneProxy.h \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiApp.h \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiHost.h \
@@ -36,10 +40,6 @@ dependencies: \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiWindowProxy.h \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiViewProxy.h \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiUIView.h \
-  /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiAnimation.h \
-  /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiPoint.h \
-  /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/ListenerEntry.h \
-  /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/LayoutConstraint.h \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiGradient.h \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiRect.h \
   /Users/albertsorianogarcia/Documents/Titanium\ Studio\ Workspace/CuidadoInfantil/build/iphone/Classes/TiTab.h \
