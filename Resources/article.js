@@ -49,18 +49,23 @@ var view = Ti.UI.createScrollView({
 	contentHeight:'auto',
 	showVerticalScrollIndicator:true
 });
-
+/*
 var data = [
 	{url:'http://1.bp.blogspot.com/_WnUMpPhaVL8/S8cs057kZ8I/AAAAAAAACz8/2NZq08D38rY/s1600/Alimentacion-de-bebes.JPG'},
 	{url:'http://pequelia.es/files/2009/04/caca-500x375.jpg'},
 	{url:'http://www.jorgemartinschwab.com/blogfotos/fotografia-bebes-nacimientos-recien-nacidos-2.jpg'},
 	{url:'http://3.bp.blogspot.com/_sFfxrpD7OTc/TAGTx-ZEm1I/AAAAAAAAAKM/cj3QK3vAdcg/s1600/bebe.jpg'},
 ];
+*/
+
+var data = win.images;
 
 var views = [];
 for (i in data) {
 	eval('var view' + i + ' = Ti.UI.createImageView({preventDefaultImage:true,width:320,height:320,image:"' + data[i].url + '"});');
-	var loading = Ti.UI.createActivityIndicator();
+	var loading = Ti.UI.createActivityIndicator({
+		style:Titanium.UI.iPhone.ActivityIndicatorStyle.DARK,
+	});
 	eval("view" + i + ".add(loading);");
 	eval("view" + i + "._loading = loading");
 	loading.show();
@@ -89,7 +94,8 @@ var title = Ti.UI.createLabel({
 	left:0
 })
 var text = Ti.UI.createLabel({
-	text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta porta semper. Cras aliquam massa a sem fringilla in vehicula leo vestibulum. Praesent lobortis congue sodales.\r\n\r\nFusce nisi diam, rhoncus sed porta venenatis, porta nec massa. Praesent porta diam in libero vulputate et fermentum justo hendrerit. Phasellus a augue vel magna placerat porttitor id quis ligula. Maecenas metus urna, faucibus vitae eleifend in, consequat ut mi. Mauris placerat augue laoreet lorem mattis eu sagittis nisl luctus.\r\n\r\nSuspendisse potenti. Aliquam mattis gravida tellus pretium tincidunt. Nulla ac justo enim. Donec a elit lectus. Cras id nulla ut turpis pretium congue...',
+	//text:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent porta porta semper. Cras aliquam massa a sem fringilla in vehicula leo vestibulum. Praesent lobortis congue sodales.\r\n\r\nFusce nisi diam, rhoncus sed porta venenatis, porta nec massa. Praesent porta diam in libero vulputate et fermentum justo hendrerit. Phasellus a augue vel magna placerat porttitor id quis ligula. Maecenas metus urna, faucibus vitae eleifend in, consequat ut mi. Mauris placerat augue laoreet lorem mattis eu sagittis nisl luctus.\r\n\r\nSuspendisse potenti. Aliquam mattis gravida tellus pretium tincidunt. Nulla ac justo enim. Donec a elit lectus. Cras id nulla ut turpis pretium congue...',
+	text:win.text,
 	color:'#333',
 	top:10,
 	font:{fontSize:14},

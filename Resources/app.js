@@ -4,6 +4,7 @@ Ti.App.black = null;
 Ti.App.title = null;
 Ti.App.currentView = null;
 Ti.App.isAnimating = false;
+var categories = [];
 
 function removeElements(view, animate) {
 	if (Ti.App.black) {
@@ -37,9 +38,11 @@ function remove_animated(view) {
 			return;
 		}
 		deleted = true;
-		Ti.App.currentView.remove(Ti.App.black);
-		Ti.App.currentView.remove(Ti.App.aux);
-		Ti.App.currentView.remove(Ti.App.title);
+		if (Ti.App.currentView) {
+			Ti.App.currentView.remove(Ti.App.black);
+			Ti.App.currentView.remove(Ti.App.aux);
+			Ti.App.currentView.remove(Ti.App.title);
+		}
 		//Ti.App.title = Ti.App.black = Ti.App.aux = null;
 		Ti.App.currentView = view;
 	});
@@ -71,7 +74,9 @@ logo.addEventListener('click', function() {
 	for (i in categories) {
 		categories[i]._view.setContentOffset({x:0,y:0},{animated:true});
 	}
-	removeElements(null, true);
+	setTimeout(function() {
+		removeElements(null, true);
+	}, 300);
 });
 
 var tools = Ti.UI.createImageView({
@@ -136,27 +141,20 @@ var scrollView = Ti.UI.createScrollView({
 });
 
 win.add(menu);
-setTimeout(function() {
-	win.add(tableView);
-}, 300);
-//win.add(scrollView);
+var loading = Ti.UI.createActivityIndicator();
+win.add(loading);
+loading.show();
+
+Ti.include('bbdd/categories.js');
 
 var rows = [];
 var lastView = null;
 var lastImage = null;
 
-var categories = [
-	{name:L('Blog'), color1:'#3388CC1', color2:'#43B3FC'},
-	{name:L('Recetas'), color1:'#28795F', color2:'#97D0C2'},
-	{name:L('Manualidades'), color1:'#FF6600', color2:'#FF9900'},
-	{name:L('Juegos'), color1:'#FFCC00', color2:'#FFEE66'},
-	{name:L('Blog'), color1:'#3388CC1', color2:'#43B3FC'},
-	//{name:L('Recetas'), color1:'#28795F', color2:'#97D0C2'},
-	//{name:L('Manualidades'), color1:'#FF6600', color2:'#FF9900'},
-	//{name:L('Juegos'), color1:'#FFCC00', color2:'#FFEE66'}
-];
-
-var row = require('row1');
-for (i in categories) {
-	categories[i]._view = row(categories[i].name, categories[i].color1, categories[i].color2, i);
+function showData(categories) {
+	var row = require('row');
+	for (i in categories) {
+		categories[i]._view = row(categories[i].name, categories[i].color1, categories[i].color2, categories[i].id);
+	}
 }
+

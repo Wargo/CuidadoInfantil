@@ -1,35 +1,125 @@
-function row (text, color1, color2, num) {
+function row (text, color1, color2, id) {
 	var small = 120;
 	var big = 200;
+	var minleft = 39;
+	var time = 300;
 	var diff = big - small;
-	var left = 39;
-	var duration = 300;
 	
-	/*
 	var rowView = Ti.UI.createTableViewRow({
 		selectionStyle:Ti.UI.iPhone.TableViewCellSelectionStyle.NONE,
-		//layout:'horizontal',
 		backgroundColor:color2,
-		height:Ti.UI.SIZE
+		height:small
 	});
-	*/
 	
 	var view = Ti.UI.createScrollView({
 		contentWidth:'auto',
 		showHorizontalScrollIndicator:false,
-		height:small,
-		borderColor:'#000',
-		borderWidth:1,
-		backgroundColor:color2,
-		//layout:'horizontal'
+		height:Ti.UI.SIZE
 	});
 	
 	view.addEventListener('click', function(e) {
-		click(e);
+		if (Ti.App.isAnimating) {
+			return;
+		}
+		Ti.App.isAnimating = true;
+		if (typeof e.source._position == 'undefined') {
+			Ti.App.removeElements(view, true);
+			Ti.App.isAnimating = false;
+			return;
+		}
+		Ti.App.removeElements(view, true);
+		e.source.opacity = 0.7;
+		var auxLeft = e.source.left;
+		var w = Ti.Platform.displayCaps.platformWidth;
+		if (e.source._position == images.length - 1) {
+			view.scrollTo(small * e.source._position - w + small + 39, 0); // - 82
+			auxLeft -= diff / 2;
+		} else if (e.source._position == 0) {
+			view.scrollTo(small * e.source._position, 0);
+			auxLeft += diff / 2;
+		} else {
+			view.scrollTo(small * e.source._position + 39 - w / 2 + small / 2, 0);
+		}
+		setTimeout(function() {
+			//e.source.animate({width:big,height:big});
+			//view.setContentOffset({x:view.getContentOffset().x + diff / 2, y:0}, {animated:true});
+			Ti.App.aux = Ti.UI.createImageView({
+				image:e.source.image,
+				width:small,
+				height:small,
+				left:auxLeft,// - diff / 2,
+				opacity:0,
+				anchorPoint:{x:0.5,y:0.5},
+				preventDefaultImage:true,
+				borderColor:'#FFF',
+				borderWidth:2
+			});
+			Ti.App.title = Ti.UI.createView({
+				backgroundColor:'#000',
+				opacity:0,
+				top:120,
+				left:0,
+				width:200,
+				height:40,
+				//zIndex:100
+			});
+			Ti.App.title.add(Ti.UI.createLabel({
+				color:'#FFF',
+				text:e.source._title,
+				top:4,left:10,right:10,
+				height:32,
+				font:{fontSize:13}
+			}));
+			Ti.App.black = Ti.UI.createView({
+				backgroundColor:'#000',
+				opacity:0,
+				left:39
+			});
+			view.add(Ti.App.black);
+			view.add(Ti.App.aux);
+			view.add(Ti.App.title);
+			var tr = Ti.UI.create2DMatrix({
+				scale:big/small
+			});
+			Ti.App.aux.animate({opacity:1, transform:tr, duration:time});
+			Ti.App.black.animate({opacity:0.7, duration:time})
+			setTimeout(function() {
+				e.source.opacity = 1;
+				Ti.App.title.left = auxLeft - diff/2;
+				Ti.App.title.animate({top:70, opacity:0.6, duration:time});
+				
+				var newWin = Ti.UI.createWindow({url:'article.js', left:320, width:320});
+				newWin.color1 = color1;
+				newWin.color2 = color2;
+				newWin.title = e.source._title;
+				newWin.text = e.source._text;
+				newWin.images = e.source._images;
+				var animateWin = Ti.UI.createAnimation({
+					left:0,
+					width:320,
+					duration:time
+				});
+				Ti.App.isAnimating = false;
+				Ti.App.aux.addEventListener('click', function() {
+					newWin.open(animateWin);
+				});
+				Ti.App.title.addEventListener('click', function() {
+					newWin.open(animateWin);
+				});
+			}, time);
+		}, time);
+	});
+	
+	view.addEventListener('scrollEnd', function() {
+		//Ti.App.removeElements(view, false);
+	});
+	
+	view.addEventListener('dragStart', function() {
+		Ti.App.removeElements(view, false);
 	});
 	
 	var tr = Titanium.UI.create2DMatrix({
-		rotate:-90,
+		rotate:-90
 	});
 	
 	var tabView = Ti.UI.createView({
@@ -61,97 +151,21 @@ function row (text, color1, color2, num) {
 	view.add(tabView);
 	view.add(miniTab);
 	
-	var data = [
-		{url:'http://www.nutricion.pro/wp-content/uploads/2011/05/Nutrici%C3%B3n-infantil-alimentaci%C3%B3n-adecuada.jpg'},
-		{url:'http://www.ecured.cu/images/b/b5/Estrabismo_infantil.jpg'},
-		{url:'http://cuidadoinfantil.net/wp-content/uploads/2009/06/rotavirus-infantil.jpg'},
-		{url:'http://cuidadoinfantil.net/wp-content/uploads/2009/06/muerte-subita-infantil-1.jpg'},
-		{url:'http://m1.paperblog.com/i/133/1331837/masaje-infantil-L-yD144M.jpeg'},
-		{url:'http://www.coveralia.com/noticias/images/Shakira-escribe-un-cuento-infantil-1960.jpg'}
-	];
-	shuffle = function(o){
-		for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-		return o;
-	};
-	
-	function click(e) {
-		if (lastView == view) {
-			return;
-		}
-		if (lastView) {
-			//lastView.animate({height:small, duration:duration});
-			for (i in lastView.images) {
-				/*
-				lastView.images[i].animate({
-					left:left + (small * i),
-					duration:duration,
-					height:small,
-					width:small
-				});
-				*/
-				lastView.images[i]._properties.animate({height:10, opacity:0});
-			}
-		}
-		//view.animate({height:big, duration:duration});
-		for (i in images) {
-			var enlarge = Ti.UI.createAnimation({
-				left:left + (big * i),
-				duration:duration,
-				height:big,
-				width:big
-			});
-			images[i].animate(enlarge);
-			images[i]._properties.animate({height:big, opacity:0.6});
-		}
-		
-		if (false && lastView) {
-			lastView.animate({height:small, duration:duration, delay:duration});
-		}
-		setTimeout(function() {
-			if (vertical) {
-				view.animate({height:big, duration:duration});
-			}
-			for (i in categories) {
-				if (i > num) {
-					if (vertical) {
-						categories[i]._view.animate({top:categories[i]._view.top + diff, duration:duration});
-					} else {
-						categories[i]._view.animate({top:categories[i]._view.top, duration:duration});
-					}
-				} else {
-					categories[i]._view.animate({top:categories[i]._view.top, duration:duration});
-				}
-			}
-		}, duration);
-		
-		lastView = view;
-		lastView.images = images;
-		
-		scrollView.scrollTo(0, num * small);
-		
-		if (e.source._position == images.length - 1) {
-			view.scrollTo(big * e.source._position - 82, 0);
-		} else if (e.source._position == 0) {
-			view.scrollTo(big * e.source._position, 0);
-		} else {
-			view.scrollTo(big * e.source._position - 30, 0);
-		}
-	}
-	
-	data = shuffle(data);
-	
 	var images = [];
-	var image = require('image');
-	for (i in data) {
-		images.push(image(view, data[i].url, left + (small * i), i));
+	function showData(data) {
+		var image = require('image');
+		for (i in data) {
+			images.push(image(view, data[i], minleft + (small * i), i));
+		}
+		rowView.add(view);
+		
+		tableView.appendRow(rowView);
+		rows.push(rowView);
 	}
-	//rowView.add(view);
 	
-	//tableView.appendRow(rowView);
-	//rows.push(rowView);
-	view.top = num * small;
-	scrollView.add(view);
-	
+	var getData = require('bbdd/articles');
+	var data = getData(id, showData);
+ 	
 	return view;
 }
 
