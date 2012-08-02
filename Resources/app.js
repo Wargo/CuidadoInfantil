@@ -1,4 +1,51 @@
 Ti.App.dataURL = '';
+Ti.App.aux = null;
+Ti.App.black = null;
+Ti.App.title = null;
+Ti.App.currentView = null;
+Ti.App.isAnimating = false;
+
+function removeElements(view, animate) {
+	if (Ti.App.black) {
+		if (view != Ti.App.currentView) {
+			remove_animated(view);
+		} else {
+			if (animate) {
+				remove_animated(view);
+			} else {
+				Ti.App.title.opacity = Ti.App.black.opacity = Ti.App.aux.opacity = 0;
+				//Ti.App.currentView.remove(Ti.App.black);
+				//Ti.App.currentView.remove(Ti.App.aux);
+				//Ti.App.currentView.remove(Ti.App.title);
+				Ti.App.title = Ti.App.black = Ti.App.aux = null;
+				Ti.App.currentView = view;
+			}
+		}
+	} else {
+		Ti.App.currentView = view;
+	}
+}
+
+function remove_animated(view) {
+	var deleted = false;
+	var auxAnim = Ti.UI.createAnimation({opacity:0, duration: 300});
+	Ti.App.black.animate(auxAnim);
+	Ti.App.aux.animate(auxAnim);
+	Ti.App.title.animate(auxAnim);
+	auxAnim.addEventListener('complete', function(e) {
+		if (deleted) {
+			return;
+		}
+		deleted = true;
+		Ti.App.currentView.remove(Ti.App.black);
+		Ti.App.currentView.remove(Ti.App.aux);
+		Ti.App.currentView.remove(Ti.App.title);
+		//Ti.App.title = Ti.App.black = Ti.App.aux = null;
+		Ti.App.currentView = view;
+	});
+}
+
+Ti.App.removeElements = removeElements;
 
 var win = Ti.UI.createWindow({
 	backgroundColor:'#000',
@@ -20,10 +67,17 @@ var logo = Ti.UI.createImageView({
 	height:25
 });
 menu.add(logo);
+logo.addEventListener('click', function() {
+	for (i in categories) {
+		categories[i]._view.setContentOffset({x:0,y:0},{animated:true});
+	}
+	removeElements(null, true);
+});
 
 var tools = Ti.UI.createImageView({
 	image:'images/tools.png',
-	left:10
+	left:10,
+	opacity:1
 });
 menu.add(tools);
 var toolsMenu = Ti.UI.createView({
@@ -40,15 +94,16 @@ var toolsMenu = Ti.UI.createView({
 });
 win.add(toolsMenu);
 var label = Ti.UI.createLabel({
-	text:L('Vertical'),
+	text:L('Configuración sin terminar'),
 	color:'#FFF',
-	top:20
+	top:20,
+	left:15,right:15
 })
 var option = Ti.UI.createSwitch({
 	value:vertical,
 	bottom:30
 });
-//toolsMenu.add(label);
+toolsMenu.add(label);
 //toolsMenu.add(option);
 option.addEventListener('change', function(e) {
 	vertical = e.value;
@@ -88,6 +143,7 @@ setTimeout(function() {
 
 var rows = [];
 var lastView = null;
+var lastImage = null;
 
 var categories = [
 	{name:L('Blog'), color1:'#3388CC1', color2:'#43B3FC'},
@@ -100,7 +156,7 @@ var categories = [
 	//{name:L('Juegos'), color1:'#FFCC00', color2:'#FFEE66'}
 ];
 
-var row = require('row2');
+var row = require('row1');
 for (i in categories) {
 	categories[i]._view = row(categories[i].name, categories[i].color1, categories[i].color2, i);
 }

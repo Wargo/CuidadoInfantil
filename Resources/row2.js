@@ -22,10 +22,15 @@ function row2 (text, color1, color2, num) {
 	});
 	
 	rowView.addEventListener('click', function(e) {
-		if (lastView == view) {
+		if (lastView == view && lastImage == e.source._position) {
 			return;
 		}
+		if (lastView == view) {
+		}
 		
+		if (typeof e.source._position == 'undefined') {
+			return;
+		}
 		images[e.source._position].animate({
 			height:big,
 			width:big,
@@ -44,17 +49,55 @@ function row2 (text, color1, color2, num) {
 				images[i].animate(anim);
 			}
 		}
+		if (lastImage) {
+			anim._lastPosition = lastImage;
+		}
 		anim._position = e.source._position;
+		
+		if (e.source._position == images.length - 1) {
+			view.scrollTo(small * e.source._position - 82, 0);
+		} else if (e.source._position == 0) {
+			view.scrollTo(small * e.source._position, 0);
+		} else {
+			view.scrollTo(small * e.source._position - 30, 0);
+		}
+		
 		anim.addEventListener('complete', function(e2) {
-			if (e2.source._position == images.length - 1) {
-				view.setContentOffset({x:small * e2.source._position - 82, y:0},{animated:true});
-			} else if (e2.source._position == 0) {
-				view.setContentOffset({x:small * e2.source._position, y:0},{animated:true});
+			if (lastView) {
+				//lastView.setContentOffset({x:0,y:0},{animated:true});
+				//lastView.height = small;
+				//lastRow.height = small;
+				setTimeout(function() {
+					for (i in lastView.images) {
+						if (i > e2.source._lastPosition) {
+							lastView.images[i].animate({
+								left:minleft + (small * i),
+								//height:small,
+								//width:small,
+								duration:time/3,
+							});
+						}
+						
+						//lastView.images[i].left = minleft + (small * i);
+						//lastView.images[i].height = small;
+						//lastView.images[i].width = small;
+						//lastView.images[i]._properties.animate({opacity:0, duration:time});
+						//lastView.images[i]._properties.opacity = 0;
+					}
+					lastView.images[e2.source._lastPosition].animate({width:small, height:small, duration:time/3});
+					
+					lastImage = e.source._position;
+					//lastRow = rowView;
+					lastView = view;
+					lastView.images = images;
+				}, 300);
 			} else {
-				view.setContentOffset({x:small * e2.source._position - 30, y:0},{animated:true});
+				lastImage = e.source._position;
+				//lastRow = rowView;
+				lastView = view;
+				lastView.images = images;
 			}
 		});
-		
 		
 		/*
 		setTimeout(function() {
@@ -65,29 +108,7 @@ function row2 (text, color1, color2, num) {
 		}, 100);
 		*/
 		
-		if (lastView) {
-			//lastView.setContentOffset({x:0,y:0},{animated:true});
-			//lastView.height = small;
-			//lastRow.height = small;
-			for (i in lastView.images) {
-				lastView.images[i].animate({
-					left:minleft + (small * i),
-					height:small,
-					width:small,
-					duration:time/2,
-				});
-				
-				//lastView.images[i].left = minleft + (small * i);
-				//lastView.images[i].height = small;
-				//lastView.images[i].width = small;
-				//lastView.images[i]._properties.animate({opacity:0, duration:time});
-				//lastView.images[i]._properties.opacity = 0;
-			}
-		}
 		
-		lastRow = rowView;
-		lastView = view;
-		lastView.images = images;
 	});
 	
 	var tr = Titanium.UI.create2DMatrix({

@@ -1,8 +1,9 @@
 function image (view, img, left, position) {
-	//var imageView = Ti.UI.createImageView({
-	var imageView = Ti.UI.createView({	
-		//image:img,
-		backgroundImage:img,
+	var imageView = Ti.UI.createImageView({
+	//var imageView = Ti.UI.createView({	
+		image:img,
+		preventDefaultImage:true,
+		//backgroundImage:img,
 		height:120,
 		width:120,
 		//width:200,
@@ -11,6 +12,13 @@ function image (view, img, left, position) {
 		//borderColor:'#FFF',
 		//borderWidth:1
 	});
+	
+	var loading = Ti.UI.createActivityIndicator({
+		
+	});
+	imageView.add(loading);
+	loading.show();
+	imageView._loading = loading;
 	
 	imageView._position = position;
 	/*
@@ -25,7 +33,12 @@ function image (view, img, left, position) {
 	*/
 	
 	var shadow = require('shadow');
-	imageView.add(shadow(7, 'left', 0.1));
+	imageView.addEventListener('load', function(e) {
+		e.source._loading.hide();
+		e.source.add(shadow(7, 'left', 0.1));
+	});
+	
+	
 	/*
 	var properties = Ti.UI.createView({
 		backgroundColor:'#000',
