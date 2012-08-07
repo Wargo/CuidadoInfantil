@@ -1,19 +1,28 @@
 function image (view, data, left, position) {
 	img = data.url;
-	var imageView = Ti.UI.createImageView({
+	var imageInside = Ti.UI.createImageView({
 		preventDefaultImage:true,
-		height:120,
-		width:120,
+		//height:120,
+		//width:120,
 		image:img,
+		opacity:0
+		//left:left
+	});
+	var imageView = Ti.UI.createView({
+		width:120,
+		height:120,
 		left:left
 	});
+	imageView.add(imageInside);
+	imageView._image = imageInside;
+	imageInside._left = left;
 	
 	var loading = Ti.UI.createActivityIndicator();
 	imageView.add(loading);
 	loading.show();
-	imageView._loading = loading;
+	imageView._image._loading = loading;
 	
-	imageView._position = position;
+	imageView._image._position = position;
 	
 	var border1 = Ti.UI.createView({
 		backgroundColor: '#FFF',
@@ -35,20 +44,21 @@ function image (view, data, left, position) {
 		height: 3,
 		right: 0, bottom: 0, left: 0
 	});
-	imageView.add(border1);
-	imageView.add(border2);
-	imageView.add(border3);
-	imageView.add(border4);
 	
 	var shadow = require('shadow');
-	imageView.addEventListener('load', function(e) {
+	imageView._image.addEventListener('load', function(e) {
+		e.source.animate({opacity:1});
+		e.source.add(border1);
+		e.source.add(border2);
+		e.source.add(border3);
+		e.source.add(border4);
 		e.source._loading.hide();
 		e.source.add(shadow(7, 'left', 0.1));
 	});
 	
-	imageView._title = data.title;
-	imageView._text = data.text;
-	imageView._images = data.images;
+	imageView._image._title = data.title;
+	imageView._image._text = data.text;
+	imageView._image._images = data.images;
 	
 	view.add(imageView);
 	

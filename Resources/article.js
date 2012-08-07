@@ -49,42 +49,88 @@ var view = Ti.UI.createScrollView({
 	contentHeight:'auto',
 	showVerticalScrollIndicator:true
 });
-/*
-var data = [
-	{url:'http://1.bp.blogspot.com/_WnUMpPhaVL8/S8cs057kZ8I/AAAAAAAACz8/2NZq08D38rY/s1600/Alimentacion-de-bebes.JPG'},
-	{url:'http://pequelia.es/files/2009/04/caca-500x375.jpg'},
-	{url:'http://www.jorgemartinschwab.com/blogfotos/fotografia-bebes-nacimientos-recien-nacidos-2.jpg'},
-	{url:'http://3.bp.blogspot.com/_sFfxrpD7OTc/TAGTx-ZEm1I/AAAAAAAAAKM/cj3QK3vAdcg/s1600/bebe.jpg'},
-];
-*/
 
 var data = win.images;
 
 var views = [];
+var bigViews = [];
 for (i in data) {
-	eval('var view' + i + ' = Ti.UI.createImageView({preventDefaultImage:true,width:320,height:320,image:"' + data[i].url + '"});');
+	eval("var view" + i + " = Ti.UI.createImageView({preventDefaultImage:true,width:320,height:320,image:'" + data[i].url + "'});");
+	eval("var viewBig" + i + " = Ti.UI.createImageView({preventDefaultImage:true,width:'100%',height:'100%',image:'" + data[i].url + "'});");
+	var imageScrollView = Ti.UI.createScrollView({
+		contentWidth: 'auto',
+		contentHeight: 'auto',
+		top: 0,
+		bottom: 0,
+		showVerticalScrollIndicator: false,
+		showHorizontalScrollIndicator: false,
+		maxZoomScale: 10,
+		minZoomScale: 1,
+		zoomScale: 1,
+		backgroundColor:'#000'
+	});
+	eval("imageScrollView.add(viewBig" + i + ")");
+	bigViews.push(imageScrollView);
+	
 	var loading = Ti.UI.createActivityIndicator({
 		style:Titanium.UI.iPhone.ActivityIndicatorStyle.DARK,
 	});
+	var loading2 = Ti.UI.createActivityIndicator();
+	
 	eval("view" + i + ".add(loading);");
 	eval("view" + i + "._loading = loading");
+	eval("viewBig" + i + ".add(loading2);");
+	eval("viewBig" + i + "._loading = loading2");
 	loading.show();
+	loading2.show();
+	
 	eval("view" + i + ".addEventListener('load', function(e) { e.source._loading.hide(); });");
+	eval("viewBig" + i + ".addEventListener('load', function(e) { e.source._loading.hide(); });");
 	
 	eval("views.push(view" + i + ");");
+	
+	eval("view" + i + ".addEventListener('click', function(e) { win.add(close); win.add(imagesBig); imagesBig.currentPage = " + i + "; imagesBig.animate({opacity:1}); });");
 }
 
 var images = Ti.UI.createScrollableView({
 	top:40,
 	cacheSize:3,
-	//currentPage:0,
 	height:heightImage,
 	pagingControlColor:win.color2,
 	pagingControlHeight:15,
 	showPagingControl:true,
-	//views:[view0, view1, view2, view3]
 	views:views
 });
+
+// Ampliada
+var imagesBig = Ti.UI.createScrollableView({
+	top:0,
+	cacheSize:3,
+	backgroundColor:'#000',
+	zIndex:200,
+	showPagingControl:false,
+	views:bigViews,
+	opacity:0
+});
+var close = Ti.UI.createImageView({
+	image:'images/close.png',
+	top:5,
+	right:5,
+	zIndex:300,
+	backgroundColor:'#000',
+	opacity:0.6,
+	width:15,
+	height:15
+});
+close.addEventListener('click', function() {
+	win.remove(close);
+	var animation = Ti.UI.createAnimation({opacity:0});
+	imagesBig.animate(animation);
+	animation.addEventListener('complete', function() {
+		win.remove(imagesBig);
+	})
+});
+// -- Ampliada
 
 var title = Ti.UI.createLabel({
 	text:win.title,

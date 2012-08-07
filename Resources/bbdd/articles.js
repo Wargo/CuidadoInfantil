@@ -6,7 +6,6 @@ function articles(id, showData) {
 			var result = eval('(' + this.responseText + ')');
 			if (result.status == 'ok') {
 				showData(result.data);
-				win.add(tableView);
 			} else {
 				if (result.message == '') {
 					result.message = L('No hay conexión a internet');

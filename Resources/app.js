@@ -4,7 +4,8 @@ Ti.App.black = null;
 Ti.App.title = null;
 Ti.App.currentView = null;
 Ti.App.isAnimating = false;
-var categories = [];
+Ti.App.categories = [];
+var vertical = false;
 
 function removeElements(view, animate) {
 	if (Ti.App.black) {
@@ -55,9 +56,10 @@ var win = Ti.UI.createWindow({
 	//layout:'vertical'
 });
 
-var vertical = false;
-
 win.open();
+
+var loading = Ti.UI.createActivityIndicator();
+loading.show();
 
 var menu = Ti.UI.createView({
 	height:40,
@@ -71,6 +73,7 @@ var logo = Ti.UI.createImageView({
 });
 menu.add(logo);
 logo.addEventListener('click', function() {
+	var categories = Ti.App.categories;
 	for (i in categories) {
 		categories[i]._view.setContentOffset({x:0,y:0},{animated:true});
 	}
@@ -84,7 +87,7 @@ var tools = Ti.UI.createImageView({
 	left:10,
 	opacity:1
 });
-menu.add(tools);
+//menu.add(tools);
 var toolsMenu = Ti.UI.createView({
 	backgroundColor:'#000',
 	borderColor:'#000',
@@ -127,25 +130,33 @@ tools.addEventListener('click', function() {
 	}
 });
 
+var reload = Ti.UI.createImageView({
+	image:'images/reload.png',
+	right:10,
+	width:20,
+	height:20
+});
+reload.addEventListener('click', function() {
+	tableView.data = [];
+	Ti.App.categories = [];
+	win.remove(tableView);
+	loading.show();
+	getData(showData);
+	win.add(tableView);
+	tableView.animate({opacity:1, duration:1000});
+});
+menu.add(reload);
+
 var tableView = Ti.UI.createTableView({
 	backgroundColor:'#000',
 	separatorColor:'#000',
-	//separatorStyle:'none',
-	top:40
-});
-
-var scrollView = Ti.UI.createScrollView({
-	contentHeight:'auto',
-	showVerticalScrollIndicator:false,
-	top:40
+	top:40,
+	opacity:0
 });
 
 win.add(menu);
-var loading = Ti.UI.createActivityIndicator();
-win.add(loading);
-loading.show();
 
-Ti.include('bbdd/categories.js');
+var getData = require('bbdd/categories');
 
 var rows = [];
 var lastView = null;
@@ -156,5 +167,15 @@ function showData(categories) {
 	for (i in categories) {
 		categories[i]._view = row(categories[i].name, categories[i].color1, categories[i].color2, categories[i].id);
 	}
+	Ti.App.categories = categories;
 }
+
+win.add(tableView);
+tableView.animate({opacity:1, duration:1000});
+setTimeout(function() {
+	loading.hide();
+}, 1000);
+
+win.add(loading);
+getData(showData);
 

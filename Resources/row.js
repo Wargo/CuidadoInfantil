@@ -29,7 +29,8 @@ function row (text, color1, color2, id) {
 		}
 		Ti.App.removeElements(view, true);
 		e.source.opacity = 0.7;
-		var auxLeft = e.source.left;
+
+		var auxLeft = e.source._left;
 		var w = Ti.Platform.displayCaps.platformWidth;
 		if (e.source._position == images.length - 1) {
 			view.scrollTo(small * e.source._position - w + small + 39, 0); // - 82
@@ -43,17 +44,29 @@ function row (text, color1, color2, id) {
 		setTimeout(function() {
 			//e.source.animate({width:big,height:big});
 			//view.setContentOffset({x:view.getContentOffset().x + diff / 2, y:0}, {animated:true});
-			Ti.App.aux = Ti.UI.createImageView({
+			var auxImage = Ti.UI.createImageView({
 				image:e.source.image,
+				//width:small,
+				//height:small,
+				//left:auxLeft,// - diff / 2,
+				//opacity:0,
+				//anchorPoint:{x:0.5,y:0.5},
+				preventDefaultImage:true,
+				//borderColor:'#FFF',
+				//borderWidth:2
+			});
+			Ti.App.aux = Ti.UI.createView({
+				//image:e.source.image,
 				width:small,
 				height:small,
 				left:auxLeft,// - diff / 2,
 				opacity:0,
 				anchorPoint:{x:0.5,y:0.5},
-				preventDefaultImage:true,
+				//preventDefaultImage:true,
 				borderColor:'#FFF',
 				borderWidth:2
 			});
+			Ti.App.aux.add(auxImage);
 			Ti.App.title = Ti.UI.createView({
 				backgroundColor:'#000',
 				opacity:0,
@@ -66,9 +79,13 @@ function row (text, color1, color2, id) {
 			Ti.App.title.add(Ti.UI.createLabel({
 				color:'#FFF',
 				text:e.source._title,
-				top:4,left:10,right:10,
+				top:4,left:10,right:20,
 				height:32,
-				font:{fontSize:13}
+				font:{fontSize:13,fontWeight:'bold'}
+			}));
+			Ti.App.title.add(Ti.UI.createImageView({
+				right:10,
+				image:'images/go.png'
 			}));
 			Ti.App.black = Ti.UI.createView({
 				backgroundColor:'#000',
@@ -157,11 +174,10 @@ function row (text, color1, color2, id) {
 		for (i in data) {
 			images.push(image(view, data[i], minleft + (small * i), i));
 		}
-		rowView.add(view);
-		
-		tableView.appendRow(rowView);
-		rows.push(rowView);
 	}
+	rowView.add(view);
+	tableView.appendRow(rowView);
+	rows.push(rowView);
 	
 	var getData = require('bbdd/articles');
 	var data = getData(id, showData);
