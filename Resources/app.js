@@ -7,6 +7,8 @@ Ti.App.isAnimating = false;
 Ti.App.categories = [];
 var vertical = false;
 
+require('ti.viewshadow');
+
 function removeElements(view, animate) {
 	if (Ti.App.black) {
 		if (view != Ti.App.currentView) {

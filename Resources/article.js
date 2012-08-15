@@ -89,7 +89,7 @@ for (i in data) {
 	
 	eval("views.push(view" + i + ");");
 	
-	eval("view" + i + ".addEventListener('click', function(e) { win.add(close); win.add(imagesBig); imagesBig.currentPage = " + i + "; imagesBig.animate({opacity:1}); });");
+	eval("view" + i + ".addEventListener('singletap', function(e) { win.add(close); win.add(imagesBig); imagesBig.currentPage = " + i + "; imagesBig.animate({opacity:1}); });");
 }
 
 var images = Ti.UI.createScrollableView({

@@ -172,7 +172,8 @@ function row (text, color1, color2, id) {
 	function showData(data) {
 		var image = require('image');
 		for (i in data) {
-			images.push(image(view, data[i], minleft + (small * i), i));
+			j = data.length - i - 1;
+			images.push(image(view, data[j], minleft + (small * j), j));
 		}
 	}
 	rowView.add(view);
