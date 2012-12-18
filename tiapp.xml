@@ -16,7 +16,7 @@
     <sdk-version>2.0.1.GA2</sdk-version>
     <id>net.artvisual.cuidadoinfantil</id>
     <name>CuidadoInfantil</name>
-    <version>1.1</version>
+    <version>1.2</version>
     <publisher>Artvisual</publisher>
     <url>http://</url>
     <description>cuidadoinfantil.net</description>
@@ -52,7 +52,7 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module version="0.3" platform="iphone">ti.viewshadow</module>
+        <module platform="iphone" version="0.3">ti.viewshadow</module>
         <module platform="commonjs" version="2.0.5">ti.cloud</module>
     </modules>
 </ti:app>

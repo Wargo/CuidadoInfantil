@@ -28,7 +28,7 @@ var back = Ti.UI.createView({
 	width:30,
 	height:30
 });
-var backIco = Ti.UI.createImageView({image:'images/back.png'});
+var backIco = Ti.UI.createImageView({image:'images/back_black.png'});
 back.add(backIco);
 var animateWin = Ti.UI.createAnimation({
 	left:320,
